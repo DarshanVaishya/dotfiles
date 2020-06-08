@@ -18,6 +18,7 @@ Plugin 'gmarik/Vundle.vim'
 " used Bundle instead of Plugin)
 " ...
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -38,6 +39,8 @@ set shiftwidth=4				" makes < and > use 4 spaces
 set path+=**					" Adds paths for :find command
 set splitbelow					" New file is at bottom when horizontally split
 set splitright					" New file is at right when vertically split
+set ignorecase					" Ignores case during search
+set wildmode=longest,list,full  " Shows all possiblities when using tab completion in vim
 
 " Shortcut for find and replace
 nnoremap S :%s//g<Left><Left>	
@@ -61,3 +64,11 @@ nnoremap <C-H> <C-W><C-H>
 " Executes current program
 autocmd FileType python   nnoremap <buffer><leader>z :w<CR> :!clear; python3 %:p<CR>
 autocmd FileType c    	  nnoremap <buffer><silent><leader>z :w<CR> :!clear; gcc %; ./a.out<cr>
+
+" Closes the autocomplete tab for YCM onces we are done
+let g:ycm_autoclose_preview_window_after_completion=1
+" <leader>g to go to defination
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Toggle nerdtree with <leader>n
+nnoremap <leader>n :NERDTreeToggle<CR>
