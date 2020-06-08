@@ -17,6 +17,7 @@ Plugin 'gmarik/Vundle.vim'
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 " ...
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -35,6 +36,8 @@ set encoding=utf-8				" UTF-8 encoding
 set tabstop=4					" Set tab to put 4 spaces
 set shiftwidth=4				" makes < and > use 4 spaces
 set path+=**					" Adds paths for :find command
+set splitbelow					" New file is at bottom when horizontally split
+set splitright					" New file is at right when vertically split
 
 " Shortcut for find and replace
 nnoremap S :%s//g<Left><Left>	
@@ -43,7 +46,7 @@ vnoremap <C-c> "+y
 " Paste from clipboard
 map <C-p> "+p
 " Make , leader key
-let mapleader =","
+let mapleader =" "
 " Toggle spell check
 map <leader>o :setlocal spell! spelllang=en_us<CR>
 " Enables case insensitive search
@@ -56,5 +59,5 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Executes current program
-autocmd FileType python   nnoremap <buffer><leader>c :w<CR> :!clear; python3 %:p;<CR>
+autocmd FileType python   nnoremap <buffer><leader>z :w<CR> :!clear; python3 %:p<CR>
 autocmd FileType c    	  nnoremap <buffer><silent><leader>z :w<CR> :!clear; gcc %; ./a.out<cr>
