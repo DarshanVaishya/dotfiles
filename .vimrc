@@ -29,7 +29,6 @@ filetype plugin indent on    " required
 
 syntax enable					" Enables syntax highlight
 set wrap!						" Disables text wrap
-set hlsearch					" Highlights all matches from search
 set number relativenumber		" Relate numbers
 set nu rnu						" Relative numbering
 set autoindent					" Enables auto indent
@@ -63,7 +62,16 @@ nnoremap <C-H> <C-W><C-H>
 
 " Executes current program
 autocmd FileType python   nnoremap <buffer><leader>z :w<CR> :!clear; python3 %:p<CR>
-autocmd FileType c    	  nnoremap <buffer><silent><leader>z :w<CR> :!clear; gcc %; ./a.out<cr>
+autocmd FileType c    	  nnoremap <buffer><silent>z :w<CR> :!clear; gcc %; ./a.out<cr>
+
+" Auto comment code
+autocmd FileType python   vnoremap <buffer><leader>c :norm I# <CR>
+autocmd FileType c    	  vnoremap <buffer><silent>c :norm I// <CR>
+
+" Delete comment
+autocmd FileType python   vnoremap <buffer><leader>d :norm 0xx<CR>
+autocmd FileType c    	  vnoremap <buffer><silent>d :norm 0xxx<CR>
+
 
 " Closes the autocomplete tab for YCM onces we are done
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -72,3 +80,8 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Toggle nerdtree with <leader>n
 nnoremap <leader>n :NERDTreeToggle<CR>
+
+" Toggle hlsearch
+nnoremap <leader>h :set hlsearch!<CR>
+" Toggle ignore case
+nnoremap <leader>i :set ignorecase!<CR>
