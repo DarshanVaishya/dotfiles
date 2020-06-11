@@ -121,15 +121,20 @@ fi
 # My edits
 # ===============================================
 
-# PIA VPN alias
-alias pia="/opt/piavpn/bin/pia-client"
 # Ranger alias
 alias r="ranger"
 # youtube-dl alias to download playlist with index
 alias yt-pl="youtube-dl -cio '%(playlist_index)s-%(title)s.%(ext)s'"
-# Activate conda environment
-alias condainit="source anaconda3/bin/activate"
 # download music
 alias yt-mu="youtube-dl -x --audio-format"
 # Promot for rm -r
 alias rm="rm -I"
+# cp ask before overwrite and show output
+alias cp="cp -iv"
+
+# Foliate alias
+alias foliate="/usr/bin/com.github.johnfactotum.Foliate"
+# Activate conda environment
+alias condainit="source anaconda3/bin/activate"
+# PIA VPN alias
+alias pia="/opt/piavpn/bin/pia-client"

@@ -19,6 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 " ...
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
+Plugin 'ap/vim-css-color'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
