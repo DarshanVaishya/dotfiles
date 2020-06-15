@@ -4,7 +4,7 @@
 set nocompatible              " required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
+" set the run time path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -40,7 +40,7 @@ set path+=**					" Adds paths for :find command
 set splitbelow					" New file is at bottom when horizontally split
 set splitright					" New file is at right when vertically split
 set ignorecase					" Ignores case during search
-set wildmode=longest,list,full  " Shows all possiblities when using tab completion in vim
+set wildmode=longest,list,full  " Shows all possibilities when using tab completion in vim
 
 " Shortcut for find and replace
 nnoremap S :%s//g<Left><Left>	
@@ -48,29 +48,31 @@ nnoremap S :%s//g<Left><Left>
 vnoremap <C-c> "+y
 " Paste from clipboard
 map <C-p> "+p
-" Make , leader key
+" Sets leader key as space
 let mapleader =" "
 " Toggle spell check
 map <leader>o :setlocal spell! spelllang=en_us<CR>
 " Enables case insensitive search
 set ic
 
-"split navigations
+"split navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Executes current program
-autocmd FileType python   nnoremap <buffer><leader>z :w<CR> :!clear; python3 %:p<CR>
+autocmd FileType python   nnoremap <buffer><leader>z :!clear; python3 %:p<CR>
 autocmd FileType c    	  nnoremap <buffer><silent>z :w<CR> :!clear; gcc %; ./a.out<cr>
 
 " Auto comment code
 autocmd FileType python   vnoremap <buffer><leader>c :norm I# <CR>
+autocmd FileType conf     vnoremap <buffer><leader>c :norm I# <CR>
 autocmd FileType c    	  vnoremap <buffer><silent>c :norm I// <CR>
 
 " Delete comment
 autocmd FileType python   vnoremap <buffer><leader>d :norm 0xx<CR>
+autocmd FileType conf     vnoremap <buffer><leader>d :norm 0xx<CR>
 autocmd FileType c    	  vnoremap <buffer><silent>d :norm 0xxx<CR>
 
 

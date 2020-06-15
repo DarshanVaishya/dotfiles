@@ -121,6 +121,12 @@ fi
 # My edits
 # ===============================================
 
+# Config shortcuts
+alias rcf="vim ~/.config/ranger/rifle.conf"
+alias bcf="vim ~/.bashrc"
+alias vcf="vim ~/.vimrc"
+alias icf="vim ~/.config/i3/config"
+
 # Ranger alias
 alias r="ranger"
 # youtube-dl alias to download playlist with index
