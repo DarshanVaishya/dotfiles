@@ -88,3 +88,6 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>h :set hlsearch!<CR>
 " Toggle ignore case
 nnoremap <leader>i :set ignorecase!<CR>
+
+" nnoremap <leader>y :!grep -oh "https\?://w\{3\}\?\.\?youtub\?e\?\.\S\+" %:p \| xargs mpv
+nnoremap <leader>y :!grep -oh "https\?://w\{3\}\?\.\?youtu\S*\.\S\+" %:p \| xargs mpv --no-video<CR>

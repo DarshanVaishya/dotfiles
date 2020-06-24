@@ -20,4 +20,9 @@ if not os.path.isdir(".config/ranger"):
     os.system("mkdir -p .config/ranger");
 os.system("cp ~/.config/ranger/* .config/ranger/")
 
+if not os.path.isdir(".config/i3blocks"):
+    print("Creating i3blocks folder")
+    os.system("mkdir -p .config/i3blocks");
+os.system("cp ~/.config/i3blocks/* .config/i3blocks/")
+
 print("Finished")

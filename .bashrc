@@ -126,6 +126,7 @@ alias rcf="vim ~/.config/ranger/rifle.conf"
 alias bcf="vim ~/.bashrc"
 alias vcf="vim ~/.vimrc"
 alias icf="vim ~/.config/i3/config"
+alias ibcf="vim ~/.config/i3blocks/i3blocks.conf"
 
 # Ranger alias
 alias r="ranger"
