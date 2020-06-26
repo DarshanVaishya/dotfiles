@@ -189,7 +189,8 @@ exec --no-startup-id xrandr --output DVI-I-0 --mode 1368x768
 # Auto start compton
 exec --no-startup-id compton
 # Auto set wallpaper every time I login
-exec --no-startup-id feh --randomize --bg-fill /mnt/HDD/Backup/Wallpapers/*
+# exec --no-startup-id feh --randomize --bg-fill /mnt/HDD/Backup/Wallpapers/*
+exec --no-startup-id autowallpaper
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
