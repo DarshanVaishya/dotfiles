@@ -1,32 +1,17 @@
-" ######################################################
-" ################## VUNDLE ############################
-" ######################################################
-set nocompatible              " required
-filetype off                  " required
+" Auto install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" set the run time path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Vim-Plug
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'								" Nerd tree
+Plug 'ap/vim-css-color'									" CSS color
+Plug 'neoclide/coc.nvim', {'branch': 'release'}			" Intellisense with CoC
+call plug#end()
 
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" add all your plugins here (note older versions of Vundle
-" used Bundle instead of Plugin)
-" ...
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ap/vim-css-color'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" ######################################################
-" ################## END ###############################
-" ######################################################
 
 syntax enable					" Enables syntax highlight
 set wrap!						" Disables text wrap
@@ -43,7 +28,7 @@ set ignorecase					" Ignores case during search
 set wildmode=longest,list,full  " Shows all possibilities when using tab completion in vim
 
 " Shortcut for find and replace
-nnoremap S :%s//g<Left><Left>	
+nnoremap S :%s/
 " Copy to clipboard
 vnoremap <C-c> "+y
 " Paste from clipboard
@@ -62,18 +47,19 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Executes current program
-autocmd FileType python   nnoremap <buffer><leader>z :!clear; python3 %:p<CR>
-autocmd FileType c    	  nnoremap <buffer><silent>z :w<CR> :!clear; gcc %; ./a.out<cr>
+" autocmd FileType python   nnoremap <buffer><leader>z :w<CR> :!clear; python3 "%:p"<CR>
+autocmd FileType python   nnoremap <buffer><leader>z :!clear; python3 "%:p"<CR>
+autocmd FileType c    	  nnoremap <buffer><leader>z :w<CR> :!clear; gcc "%:p" && ./a.out<cr>
 
 " Auto comment code
-autocmd FileType python   vnoremap <buffer><leader>c :norm I# <CR>
-autocmd FileType conf     vnoremap <buffer><leader>c :norm I# <CR>
-autocmd FileType c    	  vnoremap <buffer><silent>c :norm I// <CR>
+autocmd FileType python   vnoremap <buffer><leader>c :norm ^i# <CR>
+autocmd FileType conf     vnoremap <buffer><leader>c :norm ^i# <CR>
+autocmd FileType c    	  vnoremap <buffer><leader>c :norm ^i// <CR>
 
 " Delete comment
-autocmd FileType python   vnoremap <buffer><leader>d :norm 0xx<CR>
-autocmd FileType conf     vnoremap <buffer><leader>d :norm 0xx<CR>
-autocmd FileType c    	  vnoremap <buffer><silent>d :norm 0xxx<CR>
+autocmd FileType python   vnoremap <buffer><leader>d :norm ^xx<CR>
+autocmd FileType conf     vnoremap <buffer><leader>d :norm ^xx<CR>
+autocmd FileType c    	  vnoremap <buffer><leader>d :norm ^xxx<CR>
 
 
 " Closes the autocomplete tab for YCM onces we are done

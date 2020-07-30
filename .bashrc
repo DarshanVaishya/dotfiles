@@ -127,6 +127,7 @@ alias bcf="vim ~/.bashrc"
 alias vcf="vim ~/.vimrc"
 alias icf="vim ~/.config/i3/config"
 alias ibcf="vim ~/.config/i3blocks/i3blocks.conf"
+alias artha="artha & disown"
 
 # Ranger alias
 alias r="ranger"
@@ -138,6 +139,8 @@ alias yt-mu="youtube-dl -x --audio-format"
 alias rm="rm -I"
 # cp ask before overwrite and show output
 alias cp="cp -iv"
+# mpv auto loop
+# alias mpv="mpv --loop=inf"
 
 # Foliate alias
 alias foliate="/usr/bin/com.github.johnfactotum.Foliate"
@@ -145,3 +148,19 @@ alias foliate="/usr/bin/com.github.johnfactotum.Foliate"
 alias condainit="source anaconda3/bin/activate"
 # PIA VPN alias
 alias pia="/opt/piavpn/bin/pia-client"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home/darshan/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/darshan/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/darshan/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/darshan/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+

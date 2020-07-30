@@ -199,7 +199,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Auto run PIA VPN
-exec /opt/piavpn/bin/pia-client
+# exec /opt/piavpn/bin/pia-client
 # Lock the screen
 bindsym $mod+Shift+z exec i3lock
 
