@@ -163,12 +163,6 @@ alias pia="/opt/piavpn/bin/pia-client"
 # fi
 # unset __conda_setup
 # <<< conda initialize <<<
-# git_branch() {
-#   git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/(\1)/"
-# }
-
-# # export PS1="[\u@\h \W]\$(git_branch)\$ "
-# export PS1="\e[1;32m[\u@\h \w]\e[0m\e[1;31m\$(git_branch)\e[0m: "
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
