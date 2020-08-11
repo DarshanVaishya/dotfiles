@@ -163,9 +163,15 @@ alias pia="/opt/piavpn/bin/pia-client"
 # fi
 # unset __conda_setup
 # <<< conda initialize <<<
-git_branch() {
+# git_branch() {
+#   git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/(\1)/"
+# }
+
+# # export PS1="[\u@\h \W]\$(git_branch)\$ "
+# export PS1="\e[1;32m[\u@\h \w]\e[0m\e[1;31m\$(git_branch)\e[0m: "
+parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-# export PS1="[\u@\h \W]\$(git_branch)\$ "
-export PS1="\e[1;32m[\u@\h \w]\e[0m\e[1;31m\$(git_branch)\e[0m: "
+# export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \[\033[00m\]\[\033[32;1m\]\[\033[42m\]$(parse_git_branch)\[\033[00m\] $ '
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \[\033[00m\]$(parse_git_branch)\[\033[00m\] $ '
