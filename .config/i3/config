@@ -31,9 +31,10 @@ font pango:monospace 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
-bindsym $mod+Shift+Return exec i3-sensible-terminal
-
+# bindsym $mod+Return exec st
+bindsym $mod+Return exec alacritty
+# bindsym $mod+Shift+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec gnome-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -135,6 +136,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 assign [class="privateinternetaccess"] $ws10
 # Assign qBittorrent to work space 4
 assign [class="qBittorrent"] $ws4
+assign [class="Gnome-pomodoro"] $ws6
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -187,7 +189,7 @@ bar {
 exec --no-startup-id xrandr --output DVI-I-0 --mode 1368x768
 # Auto start compton
 exec --no-startup-id compton
-# Auto set wallpaper every time I login
+# Auto set wallpaper
 # exec --no-startup-id feh --randomize --bg-fill /mnt/HDD/Backup/Wallpapers/*
 exec --no-startup-id autowallpaper
 
@@ -203,18 +205,21 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+z exec i3lock
 
 # Window gaps
-gaps inner 10
-gaps outer 5
-for_window [class="^.*"] border pixel 1
-client.focused #555555 #555555 #ffffff #2e9ef4     #00ff00
+# gaps inner 10
+# gaps outer 5
+# for_window [class="^.*"] border pixel 7
+# client.focused #555555 #555555 #ffffff #2e9ef4     #00ff00
 
 # Floating window size
 # floating_maximum_size 600 x 600
 
 # Firefox shortcut
-bindsym $mod+Shift+f exec firefox
-# Chromium shortcut
+for_window [class="Firefox"] border pixel 1
+for_window [class="Chromium"] border pixel 1
 bindsym $mod+Shift+d exec chromium
+bindsym $mod+Shift+f exec chromium --incognito
+# bindsym $mod+Shift+f exec firefox -private
+# bindsym $mod+Shift+d exec firefox
 
 # screenshot
 bindsym Print exec gnome-screenshot -a

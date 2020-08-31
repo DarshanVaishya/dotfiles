@@ -88,7 +88,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -121,13 +121,20 @@ fi
 # My edits
 # ===============================================
 
+export EDITOR=vim
+
 # Config shortcuts
-alias rcf="vim ~/.config/ranger/rifle.conf"
-alias bcf="vim ~/.bashrc"
-alias vcf="vim ~/.vimrc"
-alias icf="vim ~/.config/i3/config"
-alias ibcf="vim ~/.config/i3blocks/i3blocks.conf"
+# alias rcf="vim ~/.config/ranger/rifle.conf"
+alias rcf="$EDITOR ~/.config/ranger/rifle.conf"
+alias bcf="$EDITOR ~/.bashrc"
+alias vcf="$EDITOR ~/.vimrc"
+alias acf="$EDITOR ~/.config/alacritty/alacritty.yml"
+alias icf="$EDITOR ~/.config/i3/config"
+alias ibcf="$EDITOR ~/.config/i3blocks/i3blocks.conf"
 alias artha="artha & disown"
+
+# git alias
+alias gl="git log --all --graph --decorate"
 
 # Ranger alias
 alias r="ranger"
@@ -139,8 +146,8 @@ alias yt-mu="youtube-dl -x --audio-format"
 alias rm="rm -I"
 # cp ask before overwrite and show output
 alias cp="cp -iv"
-# mpv auto loop
-# alias mpv="mpv --loop=inf"
+alias ave="source .venv/bin/activate"
+alias nt="st & disown"
 
 # Foliate alias
 alias foliate="/usr/bin/com.github.johnfactotum.Foliate"
@@ -148,6 +155,14 @@ alias foliate="/usr/bin/com.github.johnfactotum.Foliate"
 alias condainit="source anaconda3/bin/activate"
 # PIA VPN alias
 alias pia="/opt/piavpn/bin/pia-client"
+
+# Set vim mode
+set -o vi
+
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \[\033[00m\]$(parse_git_branch)\[\033[00m\] $ '
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -163,9 +178,3 @@ alias pia="/opt/piavpn/bin/pia-client"
 # fi
 # unset __conda_setup
 # <<< conda initialize <<<
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-
-# export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \[\033[00m\]\[\033[32;1m\]\[\033[42m\]$(parse_git_branch)\[\033[00m\] $ '
-export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \[\033[00m\]$(parse_git_branch)\[\033[00m\] $ '

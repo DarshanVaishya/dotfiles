@@ -1,7 +1,6 @@
 " Auto install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -33,8 +32,14 @@ set shiftwidth=4				" makes < and > use 4 spaces
 set path+=**					" Adds paths for :find command
 set splitbelow					" New file is at bottom when horizontally split
 set splitright					" New file is at right when vertically split
+set ignorecase
 set smartcase					" Case insensitive search if all letters are lower
 set wildmode=longest,list,full  " Shows all possibilities when using tab completion in vim
+set fileformat=unix				" Sets file format to unix style
+set shellcmdflag=-ic
+set termwinsize=10x0
+" SET
+
 
 command W execute ":w"
 
@@ -57,15 +62,20 @@ nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
 " Resizing windows
-nnoremap <leader>h :vertical resize +5<CR>
-nnoremap <leader>l :vertical resize -5<CR>
+nnoremap <leader>h :vertical resize -5<CR>
+nnoremap <leader>l :vertical resize +5<CR>
 nnoremap <leader>j :resize -5<CR>
 nnoremap <leader>k :resize +5<CR>
 
 " Executes current program
-autocmd FileType python   nnoremap <buffer><leader>z :!clear; python3 "%:p"<CR>
+if !empty(glob("./.venv/bin/python3"))
+	autocmd FileType python nnoremap <leader>z :!clear; .venv/bin/python3 "%:p"<CR>
+else
+	autocmd FileType python nnoremap <buffer><leader>z :!clear; python3 "%:p"<CR>
+endif
 autocmd FileType c   	  nnoremap <buffer><leader>z :!clear; gcc "%:p" && ./a.out<CR>
-autocmd FileType html	  nnoremap <buffer><leader>z :!chromium "%:p"<CR><CR>
+autocmd FileType cpp   	  nnoremap <buffer><leader>z :!clear; g++ "%:p" && ./a.out<CR>
+autocmd FileType html,htmldjango nnoremap <buffer><leader>z :!xdg-open "%:p"<CR><CR>
 
 " Toggle nerdtree with <leader>n
 nnoremap <leader>n :NERDTreeToggle<CR>
@@ -73,24 +83,28 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 " Toggle hlsearch
 nnoremap <leader>hl :set hlsearch!<CR>
 
-nnoremap <leader>y :!grep -oh "https\?://w\{3\}\?\.\?youtu\S*\.\S\+" "%:p" \| xargs mpv --no-video<CR>
+nnoremap <leader>y :!grep -oh "https\?://w\{3\}\?\.\?youtu\S*\.\S\+" "%:p" \| shuf \| xargs mpv --no-video<CR>
 
 " Show undotree
 nnoremap <leader>u :UndotreeShow<CR>
+nnoremap <leader>t :terminal<CR>
 
 " FZF shortcuts
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>gf :GFiles<CR>
 
 " Comment  and remove comment from code
-map <leader>/ gcc
+map <leader>/ gcc<ESC>
 
 " ### COC SETTINGS ###
 let g:coc_global_extensions = [
 	\ 'coc-snippets',
 	\ 'coc-pairs',
 	\ 'coc-python',
-	\ 'coc-json'
+	\ 'coc-json',
+	\ 'coc-sh',
+	\ 'coc-clangd',
+	\ 'coc-tsserver'
 	\ ]
 " Select python interpreter in COC
 nnoremap <leader>ci :CocCommand python.setInterpreter<CR>
@@ -99,3 +113,4 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-refrences)
+nmap <leader>rr <Plug>(coc-rename)

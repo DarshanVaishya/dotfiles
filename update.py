@@ -25,4 +25,9 @@ if not os.path.isdir(".config/i3blocks"):
     os.system("mkdir -p .config/i3blocks");
 os.system("cp ~/.config/i3blocks/* .config/i3blocks/")
 
+if not os.path.isdir(".config/alacritty"):
+    print("Creating alacritty folder")
+    os.system("mkdir -p .config/alacritty")
+os.system("cp ~/.config/alacritty/alacritty.yml .config/alacritty")
+
 print("Finished")
