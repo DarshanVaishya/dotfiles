@@ -19,7 +19,6 @@
 *.color14: #33c5ba
 *.color7: #bfbaac
 *.color15: #FDF6E3
-*.cursorBlink: true
 
 ! Gruvbox
 /* *.alpha: 0.99 */

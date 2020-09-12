@@ -66,7 +66,8 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+$debian_chroot}\u@\h: \w\a\]$PS1"
+    # PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
 *)
     ;;
@@ -121,13 +122,14 @@ fi
 # My edits
 # ===============================================
 
-export EDITOR=vim
+export EDITOR=nvim
 
 # Config shortcuts
 # alias rcf="vim ~/.config/ranger/rifle.conf"
 alias rcf="$EDITOR ~/.config/ranger/rifle.conf"
 alias bcf="$EDITOR ~/.bashrc"
-alias vcf="$EDITOR ~/.vimrc"
+# alias vcf="$EDITOR ~/.vimrc"
+alias vcf="$EDITOR ~/.config/nvim/init.vim"
 alias acf="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias icf="$EDITOR ~/.config/i3/config"
 alias ibcf="$EDITOR ~/.config/i3blocks/i3blocks.conf"
@@ -178,3 +180,7 @@ export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\
 # fi
 # unset __conda_setup
 # <<< conda initialize <<<
+
+# DEBIAN ALIASES
+alias poweroff="systemctl poweroff"
+alias reboot="systemctl reboot"

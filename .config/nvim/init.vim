@@ -1,17 +1,12 @@
-" Auto install vim-plug if not found
-
-
 " ### Vim-Plug ###
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'								" Nerd tree
 Plug 'ap/vim-css-color'									" CSS color
 Plug 'mbbill/undotree'									" Undotree
 Plug 'neoclide/coc.nvim', {'branch': 'release'}			" Autocomplition
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --clang-completer' }
+Plug 'kien/ctrlp.vim'									" Fuzzy find
 Plug 'tpope/vim-fugitive'								" Git integration
 Plug 'vim-airline/vim-airline'							" Footer bar
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }		" File searching
-Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'									" Color scheme
 Plug 'tpope/vim-commentary'								" Auto commentor
 call plug#end()
@@ -34,12 +29,11 @@ set ignorecase
 set smartcase					" Case insensitive search if all letters are lower
 set wildmode=longest,list,full  " Shows all possibilities when using tab completion in vim
 set fileformat=unix				" Sets file format to unix style
-set shellcmdflag=-ic
-set termwinsize=10x0
-" SET
-
+" set shellcmdflag=-ic
 
 command W execute ":w"
+" Nvim enter into insert mode when using :!
+autocmd TermOpen term://* startinsert
 
 " Shortcut for find and replace
 nnoremap S :%s/
@@ -47,7 +41,7 @@ vnoremap S :s/
 " Copy to clipboard
 vnoremap <C-c> "+y
 " Paste from clipboard
-map <C-p> "+p
+" map <C-p> "+p
 " Sets leader key as space
 let mapleader =" "
 " Toggle spell check
@@ -67,13 +61,14 @@ nnoremap <leader>k :resize +5<CR>
 
 " Executes current program
 if !empty(glob("./.venv/bin/python3"))
-	autocmd FileType python nnoremap <leader>z :!clear; .venv/bin/python3 "%:p"<CR>
+	autocmd FileType python nnoremap <leader>z :! .venv/bin/python3 "%:p"<CR>
 else
-	autocmd FileType python nnoremap <buffer><leader>z :!clear; python3 "%:p"<CR>
+	" autocmd FileType python nnoremap <buffer><leader>z :!clear; python3 "%:p"<CR>
+	autocmd FileType python nnoremap <buffer><leader>z :! python3 "%:p"<CR>
 endif
-autocmd FileType c   	  nnoremap <buffer><leader>z :!clear; gcc "%:p" && ./a.out<CR>
-autocmd FileType cpp   	  nnoremap <buffer><leader>z :!clear; g++ "%:p" && ./a.out<CR>
-autocmd FileType html,htmldjango nnoremap <buffer><leader>z :!xdg-open "%:p"<CR><CR>
+autocmd FileType c   	  nnoremap <buffer><leader>z :! gcc "%:p" && ./a.out<CR>
+autocmd FileType cpp   	  nnoremap <buffer><leader>z :! g++ "%:p" && ./a.out<CR>
+autocmd FileType html,htmldjango nnoremap <buffer><leader>z :! xdg-open "%:p"<CR><CR>
 
 " Toggle nerdtree with <leader>n
 nnoremap <leader>n :NERDTreeToggle<CR>
@@ -81,11 +76,12 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 " Toggle hlsearch
 nnoremap <leader>hl :set hlsearch!<CR>
 
-nnoremap <leader>y :!grep -oh "https\?://w\{3\}\?\.\?youtu\S*\.\S\+" "%:p" \| shuf \| xargs mpv --no-video<CR>
+" nnoremap <leader>y :!grep -oh "https\?://w\{3\}\?\.\?youtu\S*\.\S\+" "%:p" \| shuf \| xargs mpv --no-video<CR>
+nnoremap <leader>y :term grep -oh "https\?://w\{3\}\?\.\?youtu\S*\.\S\+" "%:p" \| shuf \| xargs mpv --no-video<CR>
 
 " Show undotree
 nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <leader>t :terminal<CR>
+nnoremap <leader>t :!inal<CR>
 
 " FZF shortcuts
 nnoremap <leader>f :Files<CR>
@@ -95,20 +91,19 @@ nnoremap <leader>gf :GFiles<CR>
 map <leader>/ gcc<ESC>
 
 " ### COC SETTINGS ###
-" let g:coc_global_extensions = [
-" 	\ 'coc-snippets',
-" 	\ 'coc-pairs',
-" 	\ 'coc-python',
-" 	\ 'coc-json',
-" 	\ 'coc-sh',
-" 	\ 'coc-clangd',
-" 	\ 'coc-tsserver'
-" 	\ ]
+let g:coc_global_extensions = [
+	\ 'coc-snippets',
+	\ 'coc-pairs',
+	\ 'coc-python',
+	\ 'coc-json',
+	\ 'coc-sh',
+	\ 'coc-clangd',
+	\ ]
 " Select python interpreter in COC
-" nnoremap <leader>ci :CocCommand python.setInterpreter<CR>
-" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-" nmap <leader>gd <Plug>(coc-definition)
-" nmap <leader>gr <Plug>(coc-refrences)
-" nmap <leader>rr <Plug>(coc-rename)
+autocmd FileType python nnoremap <leader>ci :CocCommand python.setInterpreter<CR>
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-refrences)
+nmap <leader>rr <Plug>(coc-rename)
