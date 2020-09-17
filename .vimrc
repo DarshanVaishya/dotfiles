@@ -1,19 +1,16 @@
-" Auto install vim-plug if not found
-
-
 " ### Vim-Plug ###
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'								" Nerd tree
-Plug 'ap/vim-css-color'									" CSS color
-Plug 'mbbill/undotree'									" Undotree
-Plug 'neoclide/coc.nvim', {'branch': 'release'}			" Autocomplition
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}			" Autocomplition
+" Plug 'scrooloose/nerdtree'								" Nerd tree
+" Plug 'ap/vim-css-color'									" CSS color
+" Plug 'mbbill/undotree'									" Undotree
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --clang-completer' }
-Plug 'tpope/vim-fugitive'								" Git integration
-Plug 'vim-airline/vim-airline'							" Footer bar
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }		" File searching
-Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'									" Color scheme
-Plug 'tpope/vim-commentary'								" Auto commentor
+" Plug 'tpope/vim-fugitive'								" Git integration
+" Plug 'vim-airline/vim-airline'							" Footer bar
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }		" File searching
+" Plug 'junegunn/fzf.vim'
+" Plug 'morhetz/gruvbox'									" Color scheme
+" Plug 'tpope/vim-commentary'								" Auto commentor
 call plug#end()
 
 colorscheme gruvbox

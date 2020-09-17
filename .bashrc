@@ -150,6 +150,7 @@ alias rm="rm -I"
 alias cp="cp -iv"
 alias ave="source .venv/bin/activate"
 alias nt="st & disown"
+alias hdd="cd /mnt/HDD"
 
 # Foliate alias
 alias foliate="/usr/bin/com.github.johnfactotum.Foliate"
@@ -184,3 +185,10 @@ export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\
 # DEBIAN ALIASES
 alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot"
+
+lolban ()
+{
+    echo
+    figlet -f ~/.local/share/fonts/3d.flf $* | lolcat
+    echo
+}

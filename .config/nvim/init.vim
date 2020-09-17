@@ -1,9 +1,10 @@
 " ### Vim-Plug ###
 call plug#begin('~/.vim/plugged')
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'								" Nerd tree
 Plug 'ap/vim-css-color'									" CSS color
 Plug 'mbbill/undotree'									" Undotree
-Plug 'neoclide/coc.nvim', {'branch': 'release'}			" Autocomplition
 Plug 'kien/ctrlp.vim'									" Fuzzy find
 Plug 'tpope/vim-fugitive'								" Git integration
 Plug 'vim-airline/vim-airline'							" Footer bar
@@ -61,13 +62,15 @@ nnoremap <leader>k :resize +5<CR>
 
 " Executes current program
 if !empty(glob("./.venv/bin/python3"))
-	autocmd FileType python nnoremap <leader>z :! .venv/bin/python3 "%:p"<CR>
+	autocmd FileType python nnoremap <buffer><leader>z :!.venv/bin/python3 "%:p"<CR>
 else
 	" autocmd FileType python nnoremap <buffer><leader>z :!clear; python3 "%:p"<CR>
-	autocmd FileType python nnoremap <buffer><leader>z :! python3 "%:p"<CR>
+	autocmd FileType python nnoremap <buffer><leader>z :!python3 "%:p"<CR>
+	autocmd FileType python nnoremap <leader><S-z> :term python3 "%:p"<CR>
 endif
-autocmd FileType c   	  nnoremap <buffer><leader>z :! gcc "%:p" && ./a.out<CR>
-autocmd FileType cpp   	  nnoremap <buffer><leader>z :! g++ "%:p" && ./a.out<CR>
+autocmd FileType c   	  nnoremap <buffer><leader>z :term gcc "%:p" && ./a.out<CR>
+autocmd FileType cpp   	  nnoremap <buffer><leader>z :term g++ "%:p" && ./a.out<CR>
+autocmd FileType scheme	  nnoremap <buffer><leader>z :!raco exe -o a.out "%:p" && ./a.out<CR>
 autocmd FileType html,htmldjango nnoremap <buffer><leader>z :! xdg-open "%:p"<CR><CR>
 
 " Toggle nerdtree with <leader>n

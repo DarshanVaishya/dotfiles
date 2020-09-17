@@ -212,14 +212,17 @@ bindsym $mod+Shift+z exec i3lock
 
 # Floating window size
 # floating_maximum_size 600 x 600
+#
+# Remove border
+for_window [class="Firefox"] border pixel 2
+for_window [class="Chromium"] border pixel 2
+for_window [class="Zathura"] border pixel 2
 
 # Firefox shortcut
-for_window [class="Firefox"] border pixel 1
-for_window [class="Chromium"] border pixel 1
 bindsym $mod+Shift+d exec chromium
-bindsym $mod+Shift+f exec chromium --incognito
+# bindsym $mod+Shift+f exec chromium --incognito
 # bindsym $mod+Shift+f exec firefox -private
-# bindsym $mod+Shift+d exec firefox
+bindsym $mod+Shift+f exec firefox
 
 # screenshot
 bindsym Print exec gnome-screenshot -a
@@ -244,3 +247,4 @@ exec setxkbmap -option caps:swapescape		# Swap escape and caps
 # www.youtube.com###sentiment
 # www.youtube.com###guide-inner-content
 # www.youtube.com###guide-button
+# www.youtube.com##ytd-mini-guide-renderer.ytd-app.style-scope
