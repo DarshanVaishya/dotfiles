@@ -185,13 +185,14 @@ bar {
 }
 
 # Changing default resolution
-exec --no-startup-id xrandr --output DVI-I-0 --mode 1368x768
+exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080
 # Auto start compton
 exec --no-startup-id compton
 # Auto set wallpaper
 # exec --no-startup-id feh --randomize --bg-fill /mnt/HDD/Backup/Wallpapers/*
+exec --no-startup-id feh --bg-center /mnt/HDD/Backup/pics/fit/1596949674579.png
 # exec --no-startup-id autowallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/V7qrhF.jpg
+# exec --no-startup-id feh --bg-fill ~/Pictures/V7qrhF.jpg
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -217,15 +218,21 @@ bindsym $mod+Shift+z exec i3lock
 for_window [class="Firefox"] border pixel 2
 for_window [class="Chromium"] border pixel 2
 for_window [class="Zathura"] border pixel 2
+for_window [class="Emacs"] border pixel 2
+# for_window [class="mpv"] border pixel 2
+for_window [class="St"] border pixel 2
 
 # Firefox shortcut
 bindsym $mod+Shift+d exec chromium
 # bindsym $mod+Shift+f exec chromium --incognito
 # bindsym $mod+Shift+f exec firefox -private
-bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+f exec chromium
+
+bindsym $mod+y exec yt2mpv
 
 # screenshot
-bindsym Print exec gnome-screenshot -a
+# bindsym Print exec gnome-screenshot -a
+bindsym Print exec xfce4-screenshooter -r
 
 # Volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
@@ -237,6 +244,19 @@ exec setxkbmap -option caps:swapescape		# Swap escape and caps
 
 
 # UBLOCK ORIGIN
+# ECONOMIST
+# www.economist.com##.subscription-benefits
+# www.economist.com##.ds-media-promo--podcasts.ds-media-promo
+# www.economist.com##.ds-media-promo--films.ds-media-promo
+# www.economist.com##.newsletter-signup.ds-layout-grid--edged.ds-layout-grid
+# www.economist.com##.ds-footer
+# www.economist.com##.layout-article-links
+# www.economist.com##.ds-share-list
+# www.economist.com##.ds-masthead-nav-beta__item--call-to-action.ds-masthead-nav-beta__item
+# www.economist.com##.ds-masthead-nav-beta__item--log-in.ds-masthead-nav-beta__item
+# www.economist.com##.subscription-proposition
+# www.youtube.com##.ytp-button.ytp-miniplayer-button
+
 # YOUTUBE
 # www.youtube.com##ytd-watch-next-secondary-results-renderer.ytd-watch-flexy.style-scope
 # www.youtube.com##ytd-browse[page-subtype="home"]
@@ -248,3 +268,9 @@ exec setxkbmap -option caps:swapescape		# Swap escape and caps
 # www.youtube.com###guide-inner-content
 # www.youtube.com###guide-button
 # www.youtube.com##ytd-mini-guide-renderer.ytd-app.style-scope
+# www.youtube.com###dot
+# www.youtube.com###action-buttons > .ytd-comment-action-buttons-renderer.style-scope
+# www.youtube.com##.ytp-autonav-toggle-button-container
+# www.youtube.com###count > .ytd-video-primary-info-renderer.style-scope
+# www.youtube.com##.ytd-video-primary-info-renderer.style-scope.super-title
+# www.youtube.com###owner-sub-count

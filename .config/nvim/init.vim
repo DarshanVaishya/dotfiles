@@ -1,11 +1,12 @@
 " ### Vim-Plug ###
 call plug#begin('~/.vim/plugged')
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'								" Nerd tree
 Plug 'ap/vim-css-color'									" CSS color
 Plug 'mbbill/undotree'									" Undotree
-Plug 'kien/ctrlp.vim'									" Fuzzy find
+" Plug 'kien/ctrlp.vim'									" Fuzzy find
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'								" Git integration
 Plug 'vim-airline/vim-airline'							" Footer bar
 Plug 'morhetz/gruvbox'									" Color scheme

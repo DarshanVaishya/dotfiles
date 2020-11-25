@@ -185,6 +185,7 @@ export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\
 # DEBIAN ALIASES
 alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot"
+alias suspend="systemctl suspend"
 
 lolban ()
 {
