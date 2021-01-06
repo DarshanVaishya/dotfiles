@@ -186,8 +186,7 @@ bar {
 
 # Changing default resolution
 exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080
-# Auto start compton
-exec --no-startup-id compton
+exec --no-startup-id dunst
 # Auto set wallpaper
 # exec --no-startup-id feh --randomize --bg-fill /mnt/HDD/Backup/Wallpapers/*
 exec --no-startup-id feh --bg-center /mnt/HDD/Backup/pics/fit/1596949674579.png
@@ -222,11 +221,8 @@ for_window [class="Emacs"] border pixel 2
 # for_window [class="mpv"] border pixel 2
 for_window [class="St"] border pixel 2
 
-# Firefox shortcut
 bindsym $mod+Shift+d exec chromium
-# bindsym $mod+Shift+f exec chromium --incognito
-# bindsym $mod+Shift+f exec firefox -private
-bindsym $mod+Shift+f exec chromium
+bindsym $mod+Shift+f exec firefox -private
 
 bindsym $mod+y exec yt2mpv
 
@@ -274,3 +270,4 @@ exec setxkbmap -option caps:swapescape		# Swap escape and caps
 # www.youtube.com###count > .ytd-video-primary-info-renderer.style-scope
 # www.youtube.com##.ytd-video-primary-info-renderer.style-scope.super-title
 # www.youtube.com###owner-sub-count
+# www.youtube.com###author-thumbnail

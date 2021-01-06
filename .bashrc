@@ -151,6 +151,7 @@ alias cp="cp -iv"
 alias ave="source .venv/bin/activate"
 alias nt="st & disown"
 alias hdd="cd /mnt/HDD"
+alias mpv="mpv --volume=50"
 
 # Foliate alias
 alias foliate="/usr/bin/com.github.johnfactotum.Foliate"
