@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "Gruvbox Minor Dark Hard",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "$HOME/.vimrc",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "keyboard.dispatch": "keyCode",
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": true,
+    "editor.bracketPairColorization.enabled": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "explorer.confirmDelete": false
+}

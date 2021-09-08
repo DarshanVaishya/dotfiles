@@ -1,5 +1,5 @@
+#!/usr/bin/python3
 import os
-
 
 os.system("cp ~/.vimrc .")
 os.system("cp ~/.Xresources .")
@@ -34,5 +34,10 @@ if not os.path.isdir(".config/nvim"):
     print("Creating nvim folder")
     os.system("mkdir -p .config/nvim")
 os.system("cp ~/.config/nvim/init.vim .config/nvim/")
+
+if not os.path.isdir(".config/VSCodium/User"):
+    print("Creating vscodium folder")
+    os.system("mkdir -p .config/VSCodium/User")
+os.system("cp ~/.config/VSCodium/User/*.json .config/VSCodium/User")
 
 print("Finished")

@@ -14,7 +14,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 11 
+font pango:monospace 12 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -31,8 +31,8 @@ font pango:monospace 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
-# bindsym $mod+Return exec alacritty
+# bindsym $mod+Return exec st
+bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -131,9 +131,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# Assign PIAVPN to workspace 10
 assign [class="privateinternetaccess"] $ws10
-# Assign qBittorrent to work space 4
 assign [class="qBittorrent"] $ws4
 assign [class="Gnome-pomodoro"] $ws6
 
@@ -184,14 +182,19 @@ bar {
 		status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
 }
 
-# Changing default resolution
-exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080
 exec --no-startup-id dunst
-# Auto set wallpaper
-# exec --no-startup-id feh --randomize --bg-fill /mnt/HDD/Backup/Wallpapers/*
-exec --no-startup-id feh --bg-center /mnt/HDD/Backup/pics/fit/1596949674579.png
-# exec --no-startup-id autowallpaper
-# exec --no-startup-id feh --bg-fill ~/Pictures/V7qrhF.jpg
+# exec --no-startup-id feh --bg-center ~/Downloads/atlas.jpg
+exec --no-startup-id nm-applet
+exec --no-startup-id clipit
+exec --no-startup-id picom
+
+# Dual monitor set up
+exec --no-startup-id xrandr --output --primary HDMI-0 --mode 1920x1080
+exec --no-startup-id xrandr --output DVI-I-0 --mode 1368x768 --right-of HDMI-0
+# exec --no-startup-id feh --bg-center /usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png
+exec --no-startup-id feh --bg-fill ~/Pictures/roadmap.png
+workspace 1 output HDMI-0
+workspace 4 output DVI-I-0
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -205,24 +208,17 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+z exec i3lock
 
 # Window gaps
-# gaps inner 10
+gaps inner 5
 # gaps outer 5
-# for_window [class="^.*"] border pixel 7
-# client.focused #555555 #555555 #ffffff #2e9ef4     #00ff00
+for_window [class="^.*"] border pixel 2
+for_window [class="brave"] border pixel 10
+client.focused #555555 #555555 #ffffff #2e9ef4     #00ff00
 
 # Floating window size
 # floating_maximum_size 600 x 600
-#
-# Remove border
-for_window [class="Firefox"] border pixel 2
-for_window [class="Chromium"] border pixel 2
-for_window [class="Zathura"] border pixel 2
-for_window [class="Emacs"] border pixel 2
-# for_window [class="mpv"] border pixel 2
-for_window [class="St"] border pixel 2
 
-bindsym $mod+Shift+d exec chromium
-bindsym $mod+Shift+f exec firefox -private
+bindsym $mod+Shift+d exec librewolf
+bindsym $mod+Shift+f exec thunar
 
 bindsym $mod+y exec yt2mpv
 
@@ -238,20 +234,7 @@ bindsym XF86AudioMute exec amixer -q set Master 0%
 exec xset r rate 300 50						# Increase the key repeat rate
 exec setxkbmap -option caps:swapescape		# Swap escape and caps 	
 
-
 # UBLOCK ORIGIN
-# ECONOMIST
-# www.economist.com##.subscription-benefits
-# www.economist.com##.ds-media-promo--podcasts.ds-media-promo
-# www.economist.com##.ds-media-promo--films.ds-media-promo
-# www.economist.com##.newsletter-signup.ds-layout-grid--edged.ds-layout-grid
-# www.economist.com##.ds-footer
-# www.economist.com##.layout-article-links
-# www.economist.com##.ds-share-list
-# www.economist.com##.ds-masthead-nav-beta__item--call-to-action.ds-masthead-nav-beta__item
-# www.economist.com##.ds-masthead-nav-beta__item--log-in.ds-masthead-nav-beta__item
-# www.economist.com##.subscription-proposition
-# www.youtube.com##.ytp-button.ytp-miniplayer-button
 
 # YOUTUBE
 # www.youtube.com##ytd-watch-next-secondary-results-renderer.ytd-watch-flexy.style-scope

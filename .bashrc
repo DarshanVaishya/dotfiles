@@ -152,6 +152,8 @@ alias ave="source .venv/bin/activate"
 alias nt="st & disown"
 alias hdd="cd /mnt/HDD"
 alias mpv="mpv --volume=50"
+alias nb="newsboat"
+alias nbu="$EDITOR ~/.newsboat/urls"
 
 # Foliate alias
 alias foliate="/usr/bin/com.github.johnfactotum.Foliate"
@@ -188,9 +190,6 @@ alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot"
 alias suspend="systemctl suspend"
 
-lolban ()
-{
-    echo
-    figlet -f ~/.local/share/fonts/3d.flf $* | lolcat
-    echo
+mkcd() {
+	mkdir $* && cd $*
 }

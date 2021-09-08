@@ -1,53 +1,63 @@
 " ### Vim-Plug ###
 call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdtree'								" Nerd tree
-Plug 'ap/vim-css-color'									" CSS color
-Plug 'mbbill/undotree'									" Undotree
-" Plug 'kien/ctrlp.vim'									" Fuzzy find
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'								" Git integration
+Plug 'neoclide/coc.nvim', {'branch': 'release'}         " Auto completion
 Plug 'vim-airline/vim-airline'							" Footer bar
-Plug 'morhetz/gruvbox'									" Color scheme
 Plug 'tpope/vim-commentary'								" Auto commentor
+Plug 'mattn/emmet-vim'									" HTML CSS stuff
+Plug 'ap/vim-css-color'									" CSS color
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}	" Live server
+Plug 'AndrewRadev/tagalong.vim'                         " Auto changes name of tags
+Plug 'morhetz/gruvbox'									" Color scheme
+Plug 'mbbill/undotree'
+Plug 'honza/vim-snippets'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 call plug#end()
 
 colorscheme gruvbox
 set background=dark
 
-" ################### Vim-Plug end #################### " 
+" ################### Vim-Plug end #################### "
 syntax enable					" Enables syntax highlight
 set wrap!						" Disables text wrap
-set nu rnu						" Relative numbering
-set autoindent					" Enables auto indent
-set encoding=utf-8				" UTF-8 encoding
 set tabstop=4					" Set tab to put 4 spaces
 set shiftwidth=4				" makes < and > use 4 spaces
-set path+=**					" Adds paths for :find command
 set splitbelow					" New file is at bottom when horizontally split
 set splitright					" New file is at right when vertically split
-set ignorecase
+set ignorecase                  " Ignores case
 set smartcase					" Case insensitive search if all letters are lower
-set wildmode=longest,list,full  " Shows all possibilities when using tab completion in vim
+set smartindent
+set noerrorbells
+set scrolloff=5
+set signcolumn=yes              " Side bar to show errors
+set encoding=utf-8				" UTF-8 encoding
+set termguicolors				" Sets colors according to the theme
 set fileformat=unix				" Sets file format to unix style
-" set shellcmdflag=-ic
+" set nu rnu                      " relative numbers
+" set cursorline
+set number
+set updatetime=300
 
 command W execute ":w"
-" Nvim enter into insert mode when using :!
-autocmd TermOpen term://* startinsert
-
 " Shortcut for find and replace
 nnoremap S :%s/
 vnoremap S :s/
 " Copy to clipboard
 vnoremap <C-c> "+y
-" Paste from clipboard
-" map <C-p> "+p
 " Sets leader key as space
 let mapleader =" "
-" Toggle spell check
-map <leader>o :setlocal spell! spelllang=en_us<CR>
+
+" terminal settings
+tnoremap <Esc> <C-\><C-n>
+command T execute "sp | resize 15 | terminal"
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+
+autocmd FileType c   	  nnoremap <buffer><leader>z :!clear; gcc "%:p" && ./a.out<CR>
+autocmd FileType cpp   	  nnoremap <buffer><leader>z :!clear; g++ "%:p" && ./a.out<CR>
+" autocmd FileType html,htmldjango nnoremap <buffer><leader>z :!xdg-open "%:p"<CR><CR>
+autocmd FileType html,htmldjango nnoremap <buffer><leader>z :Bracey<CR>
+autocmd FileType python nnoremap <buffer><leader>z :!python3 "%:p"<CR>
 
 "split navigation
 nnoremap <C-j> <C-w><C-j>
@@ -61,38 +71,13 @@ nnoremap <leader>l :vertical resize +5<CR>
 nnoremap <leader>j :resize -5<CR>
 nnoremap <leader>k :resize +5<CR>
 
-" Executes current program
-if !empty(glob("./.venv/bin/python3"))
-	autocmd FileType python nnoremap <buffer><leader>z :!.venv/bin/python3 "%:p"<CR>
-else
-	" autocmd FileType python nnoremap <buffer><leader>z :!clear; python3 "%:p"<CR>
-	autocmd FileType python nnoremap <buffer><leader>z :!python3 "%:p"<CR>
-	autocmd FileType python nnoremap <leader><S-z> :term python3 "%:p"<CR>
-endif
-autocmd FileType c   	  nnoremap <buffer><leader>z :term gcc "%:p" && ./a.out<CR>
-autocmd FileType cpp   	  nnoremap <buffer><leader>z :term g++ "%:p" && ./a.out<CR>
-autocmd FileType scheme	  nnoremap <buffer><leader>z :!raco exe -o a.out "%:p" && ./a.out<CR>
-autocmd FileType html,htmldjango nnoremap <buffer><leader>z :! xdg-open "%:p"<CR><CR>
-
-" Toggle nerdtree with <leader>n
-nnoremap <leader>n :NERDTreeToggle<CR>
-
 " Toggle hlsearch
 nnoremap <leader>hl :set hlsearch!<CR>
-
-" nnoremap <leader>y :!grep -oh "https\?://w\{3\}\?\.\?youtu\S*\.\S\+" "%:p" \| shuf \| xargs mpv --no-video<CR>
-nnoremap <leader>y :term grep -oh "https\?://w\{3\}\?\.\?youtu\S*\.\S\+" "%:p" \| shuf \| xargs mpv --no-video<CR>
-
-" Show undotree
-nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <leader>t :!inal<CR>
-
-" FZF shortcuts
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>gf :GFiles<CR>
+nnoremap <leader>u :UndotreeToggle<CR>
 
 " Comment  and remove comment from code
 map <leader>/ gcc<ESC>
+let g:airline_theme='gruvbox'
 
 " ### COC SETTINGS ###
 let g:coc_global_extensions = [
@@ -102,12 +87,26 @@ let g:coc_global_extensions = [
 	\ 'coc-json',
 	\ 'coc-sh',
 	\ 'coc-clangd',
+	\ 'coc-tsserver',
+	\ 'coc-html',
+	\ 'coc-css'
 	\ ]
-" Select python interpreter in COC
-autocmd FileType python nnoremap <leader>ci :CocCommand python.setInterpreter<CR>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-refrences)
-nmap <leader>rr <Plug>(coc-rename)
+nmap <F2> <Plug>(coc-rename)
+map <leader><leader> <C-y>,
+inoremap <silent><expr> <c-space> coc#refresh()
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+nnoremap <leader>p :Prettier<CR>
