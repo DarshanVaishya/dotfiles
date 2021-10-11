@@ -40,4 +40,12 @@ if not os.path.isdir(".config/VSCodium/User"):
     os.system("mkdir -p .config/VSCodium/User")
 os.system("cp ~/.config/VSCodium/User/*.json .config/VSCodium/User")
 
+os.system("vscodium --list-extensions > extensions.txt")
+# cat extensions.txt | xargs -L 1 vscodium --install-extension
+
+# if not os.path.isdir('.vscode-oss'):
+#     print("Creating vscodium extensions folder")
+#     os.system("mkdir -p .vscode-oss")
+# os.system("cp -r ~/.vscode-oss/* .vscode-oss/")
+
 print("Finished")

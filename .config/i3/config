@@ -188,13 +188,9 @@ exec --no-startup-id nm-applet
 exec --no-startup-id clipit
 exec --no-startup-id picom
 
-# Dual monitor set up
-exec --no-startup-id xrandr --output --primary HDMI-0 --mode 1920x1080
-exec --no-startup-id xrandr --output DVI-I-0 --mode 1368x768 --right-of HDMI-0
-# exec --no-startup-id feh --bg-center /usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png
-exec --no-startup-id feh --bg-fill ~/Pictures/roadmap.png
 workspace 1 output HDMI-0
 workspace 4 output DVI-I-0
+
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -233,6 +229,14 @@ bindsym XF86AudioMute exec amixer -q set Master 0%
 
 exec xset r rate 300 50						# Increase the key repeat rate
 exec setxkbmap -option caps:swapescape		# Swap escape and caps 	
+
+# Dual monitor set up
+# exec --no-startup-id feh --bg-center /usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png
+# exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080
+# exec --no-startup-id xrandr --output DVI-I-0 --mode 1024x768 --right-of HDMI-0
+# exec --no-startup-id xrandr --output DVI-I-0 --mode 1368x768 --right-of HDMI-0
+exec --no-startup-id ~/.screenlayout/dualmonitor.sh
+# exec --no-startup-id feh --bg-fill ~/Pictures/roadmap.png
 
 # UBLOCK ORIGIN
 

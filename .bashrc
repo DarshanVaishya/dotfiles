@@ -134,6 +134,7 @@ alias acf="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias icf="$EDITOR ~/.config/i3/config"
 alias ibcf="$EDITOR ~/.config/i3blocks/i3blocks.conf"
 alias artha="artha & disown"
+alias code="vscodium . && exit"
 
 # git alias
 alias gl="git log --all --graph --decorate"
