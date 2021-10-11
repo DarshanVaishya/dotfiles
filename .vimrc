@@ -1,4 +1,4 @@
-# .vimrc for VSCode
+" .vimrc for VSCode
 syntax enable					" Enables syntax highlight
 set wrap!						" Disables text wrap
 set autoindent					" Enables auto indent
