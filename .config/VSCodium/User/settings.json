@@ -9,5 +9,13 @@
     "liveServer.settings.donotShowInfoMsg": true,
     "explorer.confirmDelete": false,
     "editor.tabSize": 2,
-    "workbench.colorTheme": "Gruvbox DrakenLords Dark"
+    "workbench.colorTheme": "Gruvbox DrakenLords Dark",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
 }

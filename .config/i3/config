@@ -207,8 +207,8 @@ bindsym $mod+Shift+z exec i3lock
 gaps inner 5
 # gaps outer 5
 for_window [class="^.*"] border pixel 2
-for_window [class="brave"] border pixel 10
-client.focused #555555 #555555 #ffffff #2e9ef4     #00ff00
+# client.focused #555555 #555555 #ffffff #2e9ef4     #00ff00
+client.focused #555555 #555555 #ffffff #2e9ef4     #94d82d
 
 # Floating window size
 # floating_maximum_size 600 x 600
@@ -258,3 +258,7 @@ exec --no-startup-id ~/.screenlayout/dualmonitor.sh
 # www.youtube.com##.ytd-video-primary-info-renderer.style-scope.super-title
 # www.youtube.com###owner-sub-count
 # www.youtube.com###author-thumbnail
+# www.youtube.com##.no-transition.ytd-video-renderer.style-scope > .yt-img-shadow.style-scope
+# www.youtube.com##span.ytd-video-meta-block.style-scope:nth-of-type(1)
+# www.youtube.com##.ytd-video-primary-info-renderer.style-scope > .ytd-menu-renderer.style-scope.top-level-buttons
+# www.youtube.com###avatar > .yt-img-shadow.style-scope
