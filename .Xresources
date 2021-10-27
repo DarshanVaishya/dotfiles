@@ -1,5 +1,5 @@
 ! Original blue theme
-*.alpha: 0.85
+*.alpha: 0.99
 *.foreground: #E6E6E6
 *.background: #141c21
 *.cursorColor: #afbfbf

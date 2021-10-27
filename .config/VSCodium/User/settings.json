@@ -2,20 +2,38 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "vim.vimrc.enable": true,
     "vim.vimrc.path": "$HOME/.vimrc",
-    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
     "keyboard.dispatch": "keyCode",
     "prettier.useTabs": true,
     "editor.bracketPairColorization.enabled": true,
     "liveServer.settings.donotShowInfoMsg": true,
     "explorer.confirmDelete": false,
-    "editor.tabSize": 2,
-    "workbench.colorTheme": "Gruvbox DrakenLords Dark",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "files.exclude": {
         "**/.classpath": true,
         "**/.project": true,
         "**/.settings": true,
         "**/.factorypath": true
-    }
+    },
+    "files.trimTrailingWhitespace": true,
+    "[markdown]": {
+    "files.trimTrailingWhitespace": false
+    },
+    // Tab spaces
+    "[sass]": {
+        "editor.tabSize": 2
+    },
+    "[css]": {
+        "editor.tabSize": 2
+    },
+    "[html]": {
+        "editor.tabSize": 2
+    },
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "vim.foldfix": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "window.menuBarVisibility": "toggle",
+    "git.autofetch": true
 }

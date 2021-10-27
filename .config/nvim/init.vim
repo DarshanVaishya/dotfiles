@@ -1,18 +1,10 @@
 " ### Vim-Plug ###
 call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}         " Auto completion
 Plug 'vim-airline/vim-airline'							" Footer bar
 Plug 'tpope/vim-commentary'								" Auto commentor
-Plug 'mattn/emmet-vim'									" HTML CSS stuff
 Plug 'ap/vim-css-color'									" CSS color
-Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}	" Live server
-Plug 'AndrewRadev/tagalong.vim'                         " Auto changes name of tags
 Plug 'morhetz/gruvbox'									" Color scheme
 Plug 'mbbill/undotree'
-Plug 'honza/vim-snippets'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 call plug#end()
 
 colorscheme gruvbox
