@@ -6,6 +6,7 @@ jdinhlife.gruvbox
 kisstkondoros.vscode-gutter-preview
 naumovs.color-highlight
 PKief.material-icon-theme
+ritwickdey.live-sass
 ritwickdey.LiveServer
 usernamehw.errorlens
 vscodevim.vim

@@ -59,5 +59,11 @@
   {
     "key": "ctrl+shift+h",
     "command": "workbench.action.decreaseViewWidth"
-  }
+  },
+  // FOR HTML ONLY
+  // {
+  //   "key": "shift+5",
+  //   "command": "editor.emmet.action.matchTag",
+  //   "when": "vim.mode == 'Normal'"
+  // },
 ]

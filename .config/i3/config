@@ -51,9 +51,7 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
+bindsym $mod+Left focus left bindsym $mod+Down focus down bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
@@ -132,7 +130,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 assign [class="privateinternetaccess"] $ws10
-assign [class="qBittorrent"] $ws4
+assign [class="qBittorrent"] $ws10
 assign [class="Gnome-pomodoro"] $ws6
 
 # reload the configuration file
@@ -189,6 +187,8 @@ exec --no-startup-id clipit
 exec --no-startup-id picom
 
 workspace 1 output HDMI-0
+workspace 2 output HDMI-0
+workspace 3 output HDMI-0
 workspace 4 output DVI-I-0
 
 
@@ -219,8 +219,8 @@ bindsym $mod+Shift+f exec nemo
 bindsym $mod+y exec yt2mpv
 
 # screenshot
-# bindsym Print exec gnome-screenshot -a
-bindsym Print exec xfce4-screenshooter -r
+bindsym Print exec gnome-screenshot -a
+# bindsym Print exec xfce4-screenshooter -r
 
 # Volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
@@ -236,7 +236,13 @@ exec setxkbmap -option caps:swapescape		# Swap escape and caps
 # exec --no-startup-id xrandr --output DVI-I-0 --mode 1024x768 --right-of HDMI-0
 # exec --no-startup-id xrandr --output DVI-I-0 --mode 1368x768 --right-of HDMI-0
 exec --no-startup-id ~/.screenlayout/dualmonitor.sh
+exec --no-startup-id water-reminder
 # exec --no-startup-id feh --bg-fill ~/Pictures/roadmap.png
+
+# exec --no-startup-id sh -c 'sleep 1; i3-msg "workspace 1; exec /usr/bin/librewolf;"'
+# exec --no-startup-id sh -c 'sleep 2; i3-msg "workspace 2; exec /usr/bin/vscodium;"'
+# exec --no-startup-id sh -c 'sleep 4; i3-msg "workspace 4; exec /usr/bin/firefox;"'
+# exec --no-startup-id sh -c 'sleep 5; i3-msg "workspace 1;"'
 
 # UBLOCK ORIGIN
 

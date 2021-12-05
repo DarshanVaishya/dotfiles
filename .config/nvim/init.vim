@@ -26,8 +26,8 @@ set signcolumn=yes              " Side bar to show errors
 set encoding=utf-8				" UTF-8 encoding
 set termguicolors				" Sets colors according to the theme
 set fileformat=unix				" Sets file format to unix style
-" set nu rnu                      " relative numbers
-" set cursorline
+set nu rnu                      " relative numbers
+set cursorline
 set number
 set updatetime=300
 

@@ -1,39 +1,89 @@
 {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "vim.vimrc.enable": true,
-    "vim.vimrc.path": "$HOME/.vimrc",
-    "keyboard.dispatch": "keyCode",
-    "prettier.useTabs": true,
-    "editor.bracketPairColorization.enabled": true,
-    "liveServer.settings.donotShowInfoMsg": true,
-    "explorer.confirmDelete": false,
-    "workbench.colorTheme": "Gruvbox Dark Medium",
-    "editor.suggestSelection": "first",
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
-    "files.trimTrailingWhitespace": true,
-    "[markdown]": {
-    "files.trimTrailingWhitespace": false
-    },
-    // Tab spaces
-    "[sass]": {
-        "editor.tabSize": 2
-    },
-    "[css]": {
-        "editor.tabSize": 2
-    },
-    "[html]": {
-        "editor.tabSize": 2
-    },
-    "[javascript]": {
-        "editor.tabSize": 2
-    },
-    "vim.foldfix": true,
-    "workbench.iconTheme": "material-icon-theme",
-    "window.menuBarVisibility": "toggle",
-    "git.autofetch": true
+	// VIM KEYBINDINGS
+	"vim.vimrc.enable": true,
+	"vim.vimrc.path": "$HOME/.vimrc",
+	"vim.leader": "<space>",
+	"vim.foldfix": true,
+	"vim.normalModeKeyBindings": [
+		{
+			"before": ["<leader>", "<leader>"],
+			"commands": ["workbench.action.showCommands"]
+		},
+		{
+			"before": ["<Leader>", "s"],
+			"commands": ["workbench.action.gotoSymbol"]
+		},
+		{
+			"before": ["<Leader>", "f"],
+			"commands": ["workbench.action.quickOpen"]
+		},
+		{
+			"before": ["<Leader>", "r"],
+			"commands": ["editor.action.rename"]
+		},
+		{
+			"before": ["shift", 5],
+			"commands": ["editor.emmet.action.matchTag"]
+		}
+	],
+	"vim.visualModeKeyBindingsNonRecursive": [
+		{
+			"before": [">"],
+			"commands": ["editor.action.indentLines"]
+		},
+		{
+			"before": ["<"],
+			"commands": ["editor.action.outdentLines"]
+		},
+		{
+			"before": ["<leader>", "<leader>"],
+			"commands": ["workbench.action.showCommands"]
+		},
+		{
+			"before": ["<leader>", "w"],
+			"commands": ["editor.emmet.action.wrapWithAbbreviation"]
+		},
+		{
+			"before": ["shift", 5],
+			"after": ["editor.emmet.action.selectNextItem"],
+		}
+	],
+
+	// Tab spaces
+	"[sass]": {
+		"editor.tabSize": 2
+	},
+	"[css]": {
+		"editor.tabSize": 2
+	},
+	"[html]": {
+		"editor.tabSize": 2,
+	},
+	"[javascript]": {
+		"editor.tabSize": 2
+	},
+
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"keyboard.dispatch": "keyCode",
+	"prettier.useTabs": true,
+	"editor.bracketPairColorization.enabled": true,
+	"liveServer.settings.donotShowInfoMsg": true,
+	"explorer.confirmDelete": false,
+	"workbench.colorTheme": "Gruvbox Dark Medium",
+	"editor.suggestSelection": "first",
+	"files.exclude": {
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true
+	},
+	"files.trimTrailingWhitespace": true,
+	"[markdown]": {
+		"files.trimTrailingWhitespace": false
+	},
+	"workbench.iconTheme": "material-icon-theme",
+	"git.autofetch": true,
+	"window.menuBarVisibility": "toggle",
+	"editor.wordWrap": "off",
+	"editor.minimap.enabled": false
 }
