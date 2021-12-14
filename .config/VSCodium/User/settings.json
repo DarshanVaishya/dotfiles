@@ -14,7 +14,7 @@
 			"commands": ["workbench.action.gotoSymbol"]
 		},
 		{
-			"before": ["<Leader>", "f"],
+			"before": ["<Leader>", "e"],
 			"commands": ["workbench.action.quickOpen"]
 		},
 		{
@@ -24,6 +24,16 @@
 		{
 			"before": ["shift", 5],
 			"commands": ["editor.emmet.action.matchTag"]
+		},
+		{
+			"before": ["<leader>", "p"],
+			"commands": ["editor.action.peekDefinition"],
+			"when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+		},
+		{
+			"before": ["<leader>", "f"],
+			"commands": ["editor.toggleFold"],
+			"when": "editorTextFocus && foldingEnabled"
 		}
 	],
 	"vim.visualModeKeyBindingsNonRecursive": [
@@ -45,7 +55,7 @@
 		},
 		{
 			"before": ["shift", 5],
-			"after": ["editor.emmet.action.selectNextItem"],
+			"after": ["editor.emmet.action.selectNextItem"]
 		}
 	],
 
@@ -57,7 +67,7 @@
 		"editor.tabSize": 2
 	},
 	"[html]": {
-		"editor.tabSize": 2,
+		"editor.tabSize": 2
 	},
 	"[javascript]": {
 		"editor.tabSize": 2
@@ -85,5 +95,6 @@
 	"git.autofetch": true,
 	"window.menuBarVisibility": "toggle",
 	"editor.wordWrap": "off",
+	"editor.formatOnSave": true,
 	"editor.minimap.enabled": false
 }
