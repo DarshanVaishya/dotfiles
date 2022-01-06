@@ -206,7 +206,7 @@ client.focused #555555 #555555 #ffffff #2e9ef4     #94d82d
 # Floating window size
 # floating_maximum_size 600 x 600
 
-bindsym $mod+Shift+d exec librewolf
+bindsym $mod+Shift+d exec brave
 bindsym $mod+Shift+f exec nemo
 
 bindsym $mod+y exec yt2mpv
@@ -245,24 +245,12 @@ exec --no-startup-id water-reminder
 # UBLOCK ORIGIN
 
 # YOUTUBE
-# www.youtube.com##ytd-watch-next-secondary-results-renderer.ytd-watch-flexy.style-scope
 # www.youtube.com##ytd-browse[page-subtype="home"]
-# www.youtube.com###sections
-# www.youtube.com###buttons
-# www.youtube.com###button
-# www.youtube.com###top-level-buttons
-# www.youtube.com###sentiment
-# www.youtube.com###guide-inner-content
-# www.youtube.com###guide-button
 # www.youtube.com##ytd-mini-guide-renderer.ytd-app.style-scope
-# www.youtube.com###dot
-# www.youtube.com###action-buttons > .ytd-comment-action-buttons-renderer.style-scope
-# www.youtube.com##.ytp-autonav-toggle-button-container
-# www.youtube.com###count > .ytd-video-primary-info-renderer.style-scope
-# www.youtube.com##.ytd-video-primary-info-renderer.style-scope.super-title
-# www.youtube.com###owner-sub-count
-# www.youtube.com###author-thumbnail
-# www.youtube.com##.no-transition.ytd-video-renderer.style-scope > .yt-img-shadow.style-scope
-# www.youtube.com##span.ytd-video-meta-block.style-scope:nth-of-type(1)
-# www.youtube.com##.ytd-video-primary-info-renderer.style-scope > .ytd-menu-renderer.style-scope.top-level-buttons
-# www.youtube.com###avatar > .yt-img-shadow.style-scope
+# www.youtube.com###guide-content
+# www.youtube.com###guide-icon
+# www.youtube.com###end > .ytd-masthead.style-scope
+# www.youtube.com##.ytp-button.ytp-miniplayer-button
+# www.youtube.com##ytd-watch-next-secondary-results-renderer.ytd-watch-flexy.style-scope > .ytd-watch-next-secondary-results-renderer.style-scope
+# www.youtube.com##ytd-button-renderer.size-default.style-default.force-icon-button.ytd-menu-renderer.style-scope > .ytd-button-renderer.style-scope.yt-simple-endpoint
+# www.youtube.com##.ytd-button-renderer.style-scope.yt-simple-endpoint > .size-default.style-destructive.ytd-button-renderer.style-scope

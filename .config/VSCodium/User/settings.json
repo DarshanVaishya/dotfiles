@@ -34,6 +34,11 @@
 			"before": ["<leader>", "f"],
 			"commands": ["editor.toggleFold"],
 			"when": "editorTextFocus && foldingEnabled"
+		},
+		{
+			"before": ["<leader>", "g", "d"],
+			"commands": ["editor.action.revealDefinition"],
+			"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
 		}
 	],
 	"vim.visualModeKeyBindingsNonRecursive": [
@@ -79,7 +84,6 @@
 	"editor.bracketPairColorization.enabled": true,
 	"liveServer.settings.donotShowInfoMsg": true,
 	"explorer.confirmDelete": false,
-	"workbench.colorTheme": "Gruvbox Dark Medium",
 	"editor.suggestSelection": "first",
 	"files.exclude": {
 		"**/.classpath": true,
@@ -96,5 +100,8 @@
 	"window.menuBarVisibility": "toggle",
 	"editor.wordWrap": "off",
 	"editor.formatOnSave": true,
-	"editor.minimap.enabled": false
+	"editor.minimap.enabled": false,
+	"workbench.colorTheme": "Gruvbox Dark Medium",
+	"liveServer.settings.donotVerifyTags": true,
+	"code-runner.clearPreviousOutput": true
 }
