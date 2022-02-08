@@ -14,10 +14,6 @@
 			"commands": ["workbench.action.gotoSymbol"]
 		},
 		{
-			"before": ["<Leader>", "e"],
-			"commands": ["workbench.action.quickOpen"]
-		},
-		{
 			"before": ["<Leader>", "r"],
 			"commands": ["editor.action.rename"]
 		},
@@ -34,12 +30,12 @@
 			"before": ["<leader>", "f"],
 			"commands": ["editor.toggleFold"],
 			"when": "editorTextFocus && foldingEnabled"
-		},
-		{
-			"before": ["<leader>", "g", "d"],
-			"commands": ["editor.action.revealDefinition"],
-			"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
 		}
+		// {
+		// 	"before": ["<leader>", "g", "d"],
+		// 	"commands": ["editor.action.revealDefinition"],
+		// 	"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+		// }
 	],
 	"vim.visualModeKeyBindingsNonRecursive": [
 		{
@@ -77,11 +73,13 @@
 	"[javascript]": {
 		"editor.tabSize": 2
 	},
+	"[typescript]": {
+		"editor.tabSize": 2
+	},
 
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"keyboard.dispatch": "keyCode",
 	"prettier.useTabs": true,
-	"editor.bracketPairColorization.enabled": true,
 	"liveServer.settings.donotShowInfoMsg": true,
 	"explorer.confirmDelete": false,
 	"editor.suggestSelection": "first",
@@ -98,10 +96,18 @@
 	"workbench.iconTheme": "material-icon-theme",
 	"git.autofetch": true,
 	"window.menuBarVisibility": "toggle",
-	"editor.wordWrap": "off",
-	"editor.formatOnSave": true,
 	"editor.minimap.enabled": false,
 	"workbench.colorTheme": "Gruvbox Dark Medium",
 	"liveServer.settings.donotVerifyTags": true,
-	"code-runner.clearPreviousOutput": true
+	"editor.bracketPairColorization.enabled": true,
+	"vim.camelCaseMotion.enable": true,
+	"code-runner.clearPreviousOutput": true,
+	"editor.fontFamily": "'DejaVu Sans Mono'",
+	"workbench.tree.indent": 20,
+	"editor.formatOnSave": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+	"vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.vim",
+	"vim.cursorStylePerMode.insert": "line-thin",
+	"vim.cursorStylePerMode.normal": "block"
 }

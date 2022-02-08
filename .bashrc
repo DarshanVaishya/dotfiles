@@ -123,9 +123,9 @@ fi
 # ===============================================
 
 export EDITOR=nvim
+export BROWSER=firefox-developer-edition
 
 # Config shortcuts
-# alias rcf="vim ~/.config/ranger/rifle.conf"
 alias rcf="$EDITOR ~/.config/ranger/rifle.conf"
 alias bcf="$EDITOR ~/.bashrc"
 # alias vcf="$EDITOR ~/.vimrc"
@@ -133,7 +133,6 @@ alias vcf="$EDITOR ~/.config/nvim/init.vim"
 alias acf="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias icf="$EDITOR ~/.config/i3/config"
 alias ibcf="$EDITOR ~/.config/i3blocks/i3blocks.conf"
-alias artha="artha & disown"
 alias code="vscodium . && exit"
 
 # git alias
@@ -141,16 +140,18 @@ alias gl="git log --all --graph --decorate"
 
 # Ranger alias
 alias r="ranger"
+
 # youtube-dl alias to download playlist with index
-alias yt-pl="youtube-dl -cio '%(playlist_index)s-%(title)s.%(ext)s'"
+alias yt-dlp="yt-dlp -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]'"
+alias yt-pl="yt-dlp -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' -cio '%(playlist_index)s-%(title)s.%(ext)s'"
 # download music
-alias yt-mu="youtube-dl -x --audio-format"
+alias yt-mu="yt-dlp -x --audio-format"
 # Promot for rm -r
 alias rm="rm -I"
 # cp ask before overwrite and show output
 alias cp="cp -iv"
 alias ave="source .venv/bin/activate"
-alias nt="st & disown"
+alias nt="alacritty & disown"
 alias hdd="cd /mnt/HDD"
 alias mpv="mpv --volume=50"
 alias nb="newsboat"
@@ -171,7 +172,7 @@ parse_git_branch() {
 }
 
 # export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \[\033[00m\]$(parse_git_branch)\[\033[00m\] $ '
-export PS1=' ${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w \[\033[00m\]$(parse_git_branch)\[\033[00m\]\[\033[01;32m\]>>> \[\033[00m\]'
+export PS1=' ${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\]$(parse_git_branch)\[\033[00m\]\[\033[01;32m\] >>> \[\033[00m\]'
 
 # DEBIAN ALIASES
 alias poweroff="systemctl poweroff"
