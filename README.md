@@ -1,6 +1,6 @@
 # My personal dot files
 
-## Includes files for following:
+## Includes files for the following:
 
 + i3 window manager
 + i3 status
@@ -8,4 +8,6 @@
 + ranger
 + bashrc
 + Xresources
-+ vimrc
++ vim
++ neovim
++ vscode
