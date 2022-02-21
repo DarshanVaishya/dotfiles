@@ -207,7 +207,7 @@ client.focused #555555 #555555 #ffffff #2e9ef4     #94d82d
 # floating_maximum_size 600 x 600
 
 bindsym $mod+Shift+d exec brave
-bindsym $mod+Shift+f exec firefox-developer-edition
+bindsym $mod+Shift+f exec nemo
 
 bindsym $mod+y exec yt2mpv
 

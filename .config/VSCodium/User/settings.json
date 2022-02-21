@@ -103,11 +103,9 @@
 	"vim.camelCaseMotion.enable": true,
 	"code-runner.clearPreviousOutput": true,
 	"editor.fontFamily": "'DejaVu Sans Mono'",
-	"workbench.tree.indent": 20,
+	"workbench.tree.indent": 15,
 	"editor.formatOnSave": true,
 	"diffEditor.ignoreTrimWhitespace": false,
-	"vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-	"vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.vim",
 	"vim.cursorStylePerMode.insert": "line-thin",
 	"vim.cursorStylePerMode.normal": "block"
 }
