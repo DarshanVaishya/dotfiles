@@ -88,6 +88,8 @@ window:
 
   # Scrolling distance multiplier.
   #multiplier: 3
+# Opacity
+  opacity: 0.95
 
 # Font configuration
 font:
@@ -234,7 +236,7 @@ colors:
   #   magenta: '#8086e8'
   #   cyan:    '#33c5ba'
   #   white:   '#FDF6E3'
-# window.opacity: 0.85
+#   opacity: 0.85
 
   # Gruvbox
   primary:
@@ -259,7 +261,6 @@ colors:
     magenta: '#d3869b'
     cyan:    '#8ec07c'
     white:   '#ebdbb2'
-window.opacity : 0.95
 
   # Dim colors
   #

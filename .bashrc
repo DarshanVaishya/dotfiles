@@ -118,6 +118,7 @@ if ! shopt -oq posix; then
 fi
 
 
+
 # ===============================================
 # My edits
 # ===============================================
@@ -133,7 +134,7 @@ alias vcf="$EDITOR ~/.config/nvim/init.vim"
 alias acf="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias icf="$EDITOR ~/.config/i3/config"
 alias ibcf="$EDITOR ~/.config/i3blocks/i3blocks.conf"
-alias code="vscodium . && exit"
+alias code="vscodium"
 
 # git alias
 alias gl="git log --all --graph --decorate"
@@ -178,3 +179,6 @@ export PS1=' ${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\]$(pa
 alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot"
 alias suspend="systemctl suspend"
+
+# export PATH="$PATH:`yarn global bin`"
+export PATH="$PATH:$(yarn global bin)"

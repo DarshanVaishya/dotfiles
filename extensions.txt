@@ -1,14 +1,14 @@
 christian-kohler.path-intellisense
 dbaeumer.vscode-eslint
-eamodio.gitlens
-ecmel.vscode-html-css
+dsznajder.es7-react-js-snippets
 esbenp.prettier-vscode
 formulahendry.auto-rename-tag
 jdinhlife.gruvbox
 kisstkondoros.vscode-gutter-preview
+mrmlnc.vscode-scss
 naumovs.color-highlight
 PKief.material-icon-theme
-ritwickdey.LiveServer
 usernamehw.errorlens
 VisualStudioExptTeam.vscodeintellicode
 vscodevim.vim
+YoshinoriN.current-file-path

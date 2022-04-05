@@ -5,6 +5,9 @@ Plug 'tpope/vim-commentary'								" Auto commentor
 Plug 'ap/vim-css-color'									" CSS color
 Plug 'morhetz/gruvbox'									" Color scheme
 Plug 'mbbill/undotree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}			" IntelliSense
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 colorscheme gruvbox
@@ -50,6 +53,7 @@ autocmd FileType cpp   	  nnoremap <buffer><leader>z :!clear; g++ "%:p" && ./a.o
 " autocmd FileType html,htmldjango nnoremap <buffer><leader>z :!xdg-open "%:p"<CR><CR>
 autocmd FileType html,htmldjango nnoremap <buffer><leader>z :Bracey<CR>
 autocmd FileType python nnoremap <buffer><leader>z :!python3 "%:p"<CR>
+autocmd FileType javascript nnoremap <buffer><leader>z :!node "%:p"<CR>
 
 "split navigation
 nnoremap <C-j> <C-w><C-j>
@@ -77,11 +81,8 @@ let g:coc_global_extensions = [
 	\ 'coc-pairs',
 	\ 'coc-python',
 	\ 'coc-json',
-	\ 'coc-sh',
-	\ 'coc-clangd',
-	\ 'coc-tsserver',
+	\ 'coc-css',
 	\ 'coc-html',
-	\ 'coc-css'
 	\ ]
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -102,3 +103,4 @@ function! s:show_documentation()
   endif
 endfunction
 nnoremap <leader>p :Prettier<CR>
+autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc

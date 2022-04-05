@@ -30,12 +30,12 @@
 			"before": ["<leader>", "f"],
 			"commands": ["editor.toggleFold"],
 			"when": "editorTextFocus && foldingEnabled"
+		},
+		{
+			"before": ["<leader>", "g", "d"],
+			"commands": ["editor.action.revealDefinition"],
+			"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
 		}
-		// {
-		// 	"before": ["<leader>", "g", "d"],
-		// 	"commands": ["editor.action.revealDefinition"],
-		// 	"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-		// }
 	],
 	"vim.visualModeKeyBindingsNonRecursive": [
 		{
@@ -76,6 +76,9 @@
 	"[typescript]": {
 		"editor.tabSize": 2
 	},
+	"[JavaScript React]": {
+		"editor.tabSize": 2
+	},
 
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"keyboard.dispatch": "keyCode",
@@ -97,7 +100,6 @@
 	"git.autofetch": true,
 	"window.menuBarVisibility": "toggle",
 	"editor.minimap.enabled": false,
-	"workbench.colorTheme": "Gruvbox Dark Medium",
 	"liveServer.settings.donotVerifyTags": true,
 	"editor.bracketPairColorization.enabled": true,
 	"vim.camelCaseMotion.enable": true,
@@ -107,5 +109,15 @@
 	"editor.formatOnSave": true,
 	"diffEditor.ignoreTrimWhitespace": false,
 	"vim.cursorStylePerMode.insert": "line-thin",
-	"vim.cursorStylePerMode.normal": "block"
+	"vim.cursorStylePerMode.normal": "block",
+	"editor.wordWrap": "off",
+	"workbench.colorTheme": "Gruvbox Dark Medium",
+	// https://github.com/facebook/create-react-app/issues/9886#issuecomment-716157455
+	"eslint.options": {
+		"ignorePattern": ["!src/*"]
+	},
+	"typescript.tsserver.trace": "verbose",
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact"
+	}
 }
