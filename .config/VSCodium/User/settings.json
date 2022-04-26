@@ -35,6 +35,14 @@
 			"before": ["<leader>", "g", "d"],
 			"commands": ["editor.action.revealDefinition"],
 			"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+		},
+		{
+			"before": ["<leader>", "b"],
+			"commands": ["workbench.action.toggleSidebarVisibility"]
+		},
+		{
+			"before": ["<leader>", "g"],
+			"commands": ["workbench.action.quickOpen"]
 		}
 	],
 	"vim.visualModeKeyBindingsNonRecursive": [
@@ -92,6 +100,15 @@
 		"**/.settings": true,
 		"**/.factorypath": true
 	},
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/bower_components": true,
+		"**/coverage": true,
+		"**/dist": true,
+		"**/build": true,
+		"**/.build": true,
+		"**/.gh-pages": true
+	},
 	"files.trimTrailingWhitespace": true,
 	"[markdown]": {
 		"files.trimTrailingWhitespace": false
@@ -100,10 +117,8 @@
 	"git.autofetch": true,
 	"window.menuBarVisibility": "toggle",
 	"editor.minimap.enabled": false,
-	"liveServer.settings.donotVerifyTags": true,
 	"editor.bracketPairColorization.enabled": true,
 	"vim.camelCaseMotion.enable": true,
-	"code-runner.clearPreviousOutput": true,
 	"editor.fontFamily": "'DejaVu Sans Mono'",
 	"workbench.tree.indent": 15,
 	"editor.formatOnSave": true,
@@ -111,7 +126,7 @@
 	"vim.cursorStylePerMode.insert": "line-thin",
 	"vim.cursorStylePerMode.normal": "block",
 	"editor.wordWrap": "off",
-	"workbench.colorTheme": "Gruvbox Dark Medium",
+	"workbench.colorTheme": "Gruvbox Dark Hard",
 	// https://github.com/facebook/create-react-app/issues/9886#issuecomment-716157455
 	"eslint.options": {
 		"ignorePattern": ["!src/*"]
@@ -119,5 +134,9 @@
 	"typescript.tsserver.trace": "verbose",
 	"emmet.includeLanguages": {
 		"javascript": "javascriptreact"
-	}
+	},
+	"currentFilePath.defaultPathStartsFrom": "workSpace",
+
+	"editor.smoothScrolling": true,
+	"breadcrumbs.enabled": true
 }

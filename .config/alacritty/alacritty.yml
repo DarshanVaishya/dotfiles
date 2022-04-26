@@ -89,7 +89,7 @@ window:
   # Scrolling distance multiplier.
   #multiplier: 3
 # Opacity
-  opacity: 0.95
+  opacity: 0.88
 
 # Font configuration
 font:
