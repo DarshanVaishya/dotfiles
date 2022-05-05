@@ -1,69 +1,66 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-  {
-    "key": "ctrl+k",
-    "command": "workbench.action.navigateUp"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.navigateDown"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "workbench.action.navigateLeft"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.navigateRight"
-  },
-  {
-    "key": "tab",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+down",
-    "command": "-selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "shift+tab",
-    "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+down",
-    "command": "-selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  { "key": "ctrl+n",
-    "command": "explorer.newFile",
-    "when": "explorerViewletFocus"
-  },
-  { "key": "ctrl+shift+n",
-    "command": "explorer.newFolder",
-    "when": "explorerViewletFocus"
-  },
-  {
-    "key": "ctrl+shift+l",
-    "command": "workbench.action.increaseViewWidth"
-  },
-  {
-    "key": "ctrl+shift+j",
-    "command": "workbench.action.increaseViewHeight"
-  },
-  {
-    "key": "ctrl+shift+k",
-    "command": "workbench.action.decreaseViewHeight"
-  },
-  {
-    "key": "ctrl+shift+h",
-    "command": "workbench.action.decreaseViewWidth"
-  },
-  // FOR HTML ONLY
-  // {
-  //   "key": "shift+5",
-  //   "command": "editor.emmet.action.matchTag",
-  //   "when": "vim.mode == 'Normal'"
-  // },
+	{
+		"key": "ctrl+k",
+		"command": "workbench.action.navigateUp"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "workbench.action.navigateDown"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "workbench.action.navigateLeft"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "workbench.action.navigateRight"
+	},
+	{
+		"key": "tab",
+		"command": "selectNextSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "shift+tab",
+		"command": "selectPrevSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "explorer.newFile",
+		"when": "explorerViewletFocus"
+	},
+	{
+		"key": "ctrl+shift+n",
+		"command": "explorer.newFolder",
+		"when": "explorerViewletFocus"
+	},
+	{
+		"key": "ctrl+shift+l",
+		"command": "workbench.action.increaseViewWidth"
+	},
+	{
+		"key": "ctrl+shift+j",
+		"command": "workbench.action.increaseViewHeight"
+	},
+	{
+		"key": "ctrl+shift+k",
+		"command": "workbench.action.decreaseViewHeight"
+	},
+	{
+		"key": "ctrl+shift+h",
+		"command": "workbench.action.decreaseViewWidth"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "workbench.action.terminal.split",
+		"when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+	}
+	// FOR HTML ONLY
+	// {
+	//   "key": "shift+5",
+	//   "command": "editor.emmet.action.matchTag",
+	//   "when": "vim.mode == 'Normal'"
+	// },
 ]

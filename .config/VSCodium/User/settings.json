@@ -1,5 +1,5 @@
 {
-	// VIM KEYBINDINGS
+	// VIM SETTINGS
 	"vim.vimrc.enable": true,
 	"vim.vimrc.path": "$HOME/.vimrc",
 	"vim.leader": "<space>",
@@ -30,11 +30,6 @@
 			"before": ["<leader>", "f"],
 			"commands": ["editor.toggleFold"],
 			"when": "editorTextFocus && foldingEnabled"
-		},
-		{
-			"before": ["<leader>", "g", "d"],
-			"commands": ["editor.action.revealDefinition"],
-			"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
 		},
 		{
 			"before": ["<leader>", "b"],
@@ -89,8 +84,8 @@
 	},
 
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"keyboard.dispatch": "keyCode",
 	"prettier.useTabs": true,
+	"keyboard.dispatch": "keyCode",
 	"liveServer.settings.donotShowInfoMsg": true,
 	"explorer.confirmDelete": false,
 	"editor.suggestSelection": "first",
@@ -126,17 +121,9 @@
 	"vim.cursorStylePerMode.insert": "line-thin",
 	"vim.cursorStylePerMode.normal": "block",
 	"editor.wordWrap": "off",
-	"workbench.colorTheme": "Gruvbox Dark Hard",
-	// https://github.com/facebook/create-react-app/issues/9886#issuecomment-716157455
-	"eslint.options": {
-		"ignorePattern": ["!src/*"]
-	},
-	"typescript.tsserver.trace": "verbose",
+	"workbench.colorTheme": "Gruvbox Dark Medium",
 	"emmet.includeLanguages": {
 		"javascript": "javascriptreact"
 	},
-	"currentFilePath.defaultPathStartsFrom": "workSpace",
-
-	"editor.smoothScrolling": true,
-	"breadcrumbs.enabled": true
+	"currentFilePath.defaultPathStartsFrom": "workSpace"
 }

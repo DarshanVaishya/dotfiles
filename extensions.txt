@@ -5,7 +5,6 @@ esbenp.prettier-vscode
 formulahendry.auto-rename-tag
 jdinhlife.gruvbox
 kisstkondoros.vscode-gutter-preview
-mrmlnc.vscode-scss
 naumovs.color-highlight
 PKief.material-icon-theme
 usernamehw.errorlens

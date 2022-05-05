@@ -10,10 +10,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 call plug#end()
 
+" My settings
 colorscheme gruvbox
 set background=dark
 
-" ################### Vim-Plug end #################### "
 syntax enable					" Enables syntax highlight
 set wrap!						" Disables text wrap
 set tabstop=4					" Set tab to put 4 spaces
